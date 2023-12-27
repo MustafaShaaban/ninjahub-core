@@ -33,7 +33,7 @@
         /**
          * @var \string[][][]
          */
-        protected array $class_name = [];
+        private array $class_name = [];
 
         public function __construct()
         {
@@ -84,7 +84,6 @@
                         'namespace' => 'NINJAHUB\APP\CLASSES',
                         'path'      => NINJAHUB_CORE_PLUGIN_PATH . 'app/Classes/class-ninjahub_user.php'
                     ],
-
                 ],
                 'admin'  => [],
                 'public' => []
@@ -122,7 +121,6 @@
          */
         public function run($type): void
         {
-            echo "[SECOND]";
             if (array_key_exists($type, $this->class_name)) {
                 foreach ($this->class_name[$type] as $class => $value) {
                     try {

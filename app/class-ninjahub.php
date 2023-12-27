@@ -61,7 +61,7 @@
          * @package NinjaHub
          * @author Mustafa Shaaban
          */
-        private function actions($hooks): void
+        protected function actions($hooks): void
         {
             $hooks->add_action('after_setup_theme', $this, 'nh_setup');
             $hooks->add_action('widgets_init', $this, 'nh_widgets_init');
@@ -70,7 +70,7 @@
         }
 
 
-        private function filters($hooks): void
+        protected function filters($hooks): void
         {
             $hooks->add_filter('body_class', $this, 'body_classes', 10, 2);
             $hooks->add_filter('query_vars', $this, 'nh_logout_query_vars');
